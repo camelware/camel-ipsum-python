@@ -10,7 +10,7 @@ user# pip install camelipsum
 çalıştırmak için 
 
 ```
-user$ camelipsum.sh  7
+user$ camelipsum.py  7
 ```
 
 return 
