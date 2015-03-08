@@ -30,6 +30,7 @@ CAMEL = ['camel', 'arab', 'pyramid', 'sun', 'desert', 'toe', 'hump', 'egypt', 'c
 
 SENTENCE_LENGTH_MIN = 8
 SENTENCE_LENGTH_MAX = 20
+STARTS_WITH = "camel ipsum dolor sit ahmet "
 
 def shuffle():
     camel_count = len(CAMEL) - 1
@@ -50,7 +51,6 @@ def merge():
     
 def get_camel_ipsum():
     rnd = random.randint(0, len(BASE) - 1)
-    pre = "camel ipsum dolor sit ahmet"
     result = ""
     for i in range(0, rnd):
         shuffle()
@@ -60,7 +60,14 @@ def get_camel_ipsum():
         result += BASE[rnd] + " "
     return result
 
+def generate_camel_ipsum():
+    result = STARTS_WITH
+    for i in range(0, int(PLENGTH)):
+        if (i < int(PLENGTH) - 1):
+            result += get_camel_ipsum() + "\n"
+        else:
+            result += get_camel_ipsum()
+    print(result)
+        
 print(">> Camel Ipsum Generator")
-
-for i in range(0, int(PLENGTH)):
-    print(get_camel_ipsum())
+generate_camel_ipsum()
